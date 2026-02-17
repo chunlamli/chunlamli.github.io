@@ -5,42 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chun Lam (Jason) Li</title>
     <style>
+        :root {
+            --bg-color: #ffffff; 
+            --text-color: #333333; 
+            --link-color: #0066cc; 
+            --border-color: #dddddd;
+            --footer-color: #666666;
+        }
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0; 
+            --link-color: #6db3f2; 
+            --border-color: #444444;
+            --footer-color: #999999;
+        }
         body {
             font-family: Georgia, serif;
             max-width: 700px;
             margin: 50px auto;
             padding: 0 20px;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color); 
+            background-color: var(--bg-color);   
         }
-
         h1 {
             margin-bottom: 5px;
         }
-
         h2 {
             margin-top: 30px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 5px;
         }
-
         a {
-            color:#0066cc;
+            color: var(--link-color);
             text-decoration: none;
         }
-
         a:hover {
             text-decoration: underline;
         }
-
         footer {
             margin-top: 50px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid var(--border-color);
             font-size: 0.9em;
-            color: #666;
+            color: var(--footer-color);
         }
-
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -56,7 +65,6 @@
             border-radius: 50%;
             margin-left: 30px;
         }
-
         @media (max-width: 600px) {
             .header-content {
                 flex-direction: column;
@@ -68,9 +76,42 @@
                 margin-top: 20px;
             }
         }
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: 1px solid var(--border-color);
+            /* border: none; */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
+    <button id ="theme-toggle" aria-label="Toggle dark mode">
+        <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">                                                                                                                                                                                                         
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>                                                                                                                                                                                                                                                      
+          </svg>                                                                                                                                                                                                                                                                                                                     
+          <svg id="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">                                                                                                                                                                                   
+              <circle cx="12" cy="12" r="5"></circle>                                                                                                                                                                                                                                                                                
+              <line x1="12" y1="1" x2="12" y2="3"></line>                                                                                                                                                                                                                                                                            
+              <line x1="12" y1="21" x2="12" y2="23"></line>                                                                                                                                                                                                                                                                          
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>                                                                                                                                                                                                                                                                  
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>                                                                                                                                                                                                                                                              
+              <line x1="1" y1="12" x2="3" y2="12"></line>                                                                                                                                                                                                                                                                            
+              <line x1="21" y1="12" x2="23" y2="12"></line>                                                                                                                                                                                                                                                                          
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>                                                                                                                                                                                                                                                                
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>                                                                                                                                                                                                                                                                
+          </svg>                          
+    </button>
     <header>
         <div class="header-content">
             <div class="header-text">
@@ -154,7 +195,35 @@
     </section>
 
     <footer>
-        <p>Last updated: February 2026</p>
+        <p>Last updated: 17 February 2026</p>
     </footer>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const moonIcon = document.getElementById('moon-icon');
+        const sunIcon = document.getElementById('sun-icon');
+
+        // check for saved preference
+        if (localStorage.getItem('theme') == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+        }
+
+        // toggle on click
+        toggle.addEventListener('click', function() {
+            if (document.documentElement.getAttribute('data-theme') == 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
