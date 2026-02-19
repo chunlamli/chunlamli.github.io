@@ -1,17 +1,29 @@
-<!-- Truly understand autograd
+<!-- Snapshot matrix construction
 
-Derive chain rule cleanly
+Mean subtraction
 
-Connect computation graph to gradients
+Inner product (energy norm vs L2)
 
-Minimal implementation -->
+SVD and mode interpretation
 
+Energy decay spectrum 
+
+When POD struggles
+
+Transient dynamics
+
+Moving coherent structures
+
+Nonlinear manifolds
+
+POD-Galerkin
+-->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backpropagation and Automatic Differentiation - Jason Li</title>
+    <title>Proper Orthogonal Decomposition in Fluid Mechanics - Jason Li</title>
 
     <!-- MathJax for LaTeX math rendering -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -37,28 +49,34 @@ Minimal implementation -->
 <body>
     <p><a href="../">Home</a> | <a href="./">Blog</a></p>
 
-    <h1>Backpropagation and Automatic Differentiation</h1>
+    <h1>Proper Orthogonal Decomposition in Fluid Mechanics</h1>
     <p><em>February 2026</em></p>
+    <h2>Introduction</h2>
 
-    <p>
-        This is my first blog post. Here I will share my study notes on backpropagation and automatic differentiation.
-        We will start with a small example. Then we will explain the undelying mathematics behind them.
-    </p>
+    <h2>Mathematical Formulation</h2>
 
-    <h2>Backpropagation</h2>
-    <p>
-        Here is an inline equation: \( E = mc^2 \).
-    </p>
+    <h2>References</h2>
+    <ol>                                                                                                                              
+        <li id="ref1">                                                                                                                
+            Lumley, J. L. (1967). <em>The structure of inhomogeneous turbulent flows.</em>                                            
+            In <em>Atmospheric Turbulence and Radio Wave Propagation</em>, pp. 166–178.
+            <!-- No open-access link for this classic, but you can cite it -->
+        </li>
 
-    <p>And here is a block equation:</p>
+        <li id="ref2">
+            Sirovich, L. (1987). Turbulence and the dynamics of coherent structures.
+            <em>Quarterly of Applied Mathematics</em>, 45(3), 561–571.
+            <a href="https://doi.org/10.1090/qam/910462" target="_blank">[DOI]</a>
+        </li>
 
-    <P>\[\nabla \cdot \mathbf{u} = 0\]</P>
-
-    <p>
-        This is the incompressibility condition for fluid flow.
-    </p>
-
-    <h2>Automatic Differentiation</h2>
+        <li id="ref3">
+            Taira, K. et al. (2017). Modal analysis of fluid flows: An overview.
+            <em>AIAA Journal</em>, 55(12), 4013–4041.
+            <a href="https://arxiv.org/abs/1702.01453" target="_blank">[arXiv]</a>
+        </li>
+    </ol>
 </body>
 </html>
+
+
 
