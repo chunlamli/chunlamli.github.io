@@ -122,7 +122,6 @@
                     <a href="mailto:chunlam.li@maths.ox.ac.uk">Email</a> /
                     <a href="https://github.com/chunlamli">GitHub</a> / 
                     <a href="https://www.linkedin.com/in/chun-lam-li-9835b4223">LinkedIn</a>
-                    <!-- <a href="blogs/">Blog</a> -->
                 </p>    
             </div>
             <img src="jason.jpg" alt="Chun Lam Li" class="profile-photo">
@@ -136,8 +135,6 @@
             I am a DPhil student at the Mathematical Institute, University of Oxford, 
             supervised by <a href="https://www.maths.ox.ac.uk/people/sarah.waters">Prof. Sarah Waters</a> and <a href="https://www.maths.ox.ac.uk/people/justin.sirignano">Prof. Justin Sirigano</a>. 
             My research focuses combining fluid mechanics with machine learning approaches.
-            <!-- My research focuses on microparticle transport in branching networks, combining fluid                                                                                            
-            mechanics with machine learning approaches.                 -->
         </p>
 
         <p>                                                                                                                                                                      
@@ -204,14 +201,12 @@
         const moonIcon = document.getElementById('moon-icon');
         const sunIcon = document.getElementById('sun-icon');
 
-        // check for saved preference
         if (localStorage.getItem('theme') == 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             moonIcon.style.display = 'none';
             sunIcon.style.display = 'block';
         }
-
-        // toggle on click
+        
         toggle.addEventListener('click', function() {
             if (document.documentElement.getAttribute('data-theme') == 'dark') {
                 document.documentElement.removeAttribute('data-theme');
