@@ -13,3 +13,111 @@ Continuous vs discrete modeling
 Stability
 
 Long-term rollouts -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Temporal Evolution in Latent Space - Jason Li</title>
+
+    <!-- MathJax for LaTeX math rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>                                                                                                                       
+        body {                                                                                                                    
+            font-family: Georgia, serif;                                                                                          
+            max-width: 720px;                                                                                                     
+            margin: 50px auto;                                                                                                    
+            padding: 0 20px;                                                                                                      
+            line-height: 1.6;                                                                                                     
+            color: #333;                                                                                                          
+        }                                                                                                                         
+        a {                                                                                                                       
+            color: #0066cc;                                                                                                       
+            text-decoration: none;                                                                                                
+        }                                                                                                                         
+        a:hover {                                                                                                                 
+            text-decoration: underline;                                                                                           
+        }                                                                                                                         
+    </style>            
+</head>
+<body>
+    <p><a href="../">Home</a> | <a href="./">Blog</a></p>
+
+    <h1>Learning Temporal Evolution in Latent Space</h1>
+    <p><em>February 2026</em></p>
+    <h2>Introduction</h2>
+
+    <h2>Mathematical Formulation</h2>
+
+    <h2>References</h2>
+    <ol>                                                                                                                              
+        <li id="ref1">
+            Lee, K., &amp; Carlberg, K. T. (2020). Model reduction of dynamical systems on nonlinear manifolds using deep convolutional autoencoders.
+            </em>Journal of Computational Physics, 404</em>, 108973.
+            <a href="https://doi.org/10.1016/j.jcp.2019.108973" target="_blank">[DOI]</a>
+        </li>
+        
+        <li id="ref2"> 
+            Lusch, B., Kutz, J. N., &amp; Brunton, S. L. (2018). Deep learning for universal linear embeddings of nonlinear dynamics.
+            </em>Nature communications, 9</em>(1), 4950.
+            <a href="https://doi.org/10.1038/s41467-018-07210-0" target="_blank">[DOI]</a>
+        </li>
+
+        <li id="ref3">                                                                                                                    
+            Otto, S. E., &amp; Rowley, C. W. (2019). Linearly recurrent autoencoder networks for learning dynamics.                                               
+            <em>SIAM Journal on Applied Dynamical Systems, 18</em>(1), 558-593.                                                                                   
+            <a href="https://doi.org/10.1137/18M1177846" target="_blank">[DOI]</a>                                                     
+        </li> 
+        
+        <li id="ref4"> 
+            Champion, K., Lusch, B., Kutz, J. N., &amp; Brunton, S. L. (2019).
+            Data-driven discovery of coordinates and governing equations.
+            <em>Proceedings of the National Academy of Sciences, 116</em>(45), 22445-22451.
+            <a href="https://doi.org/10.1073/pnas.1906995116" target="_blank">[DOI]</a>
+        </li>
+
+        <li id="ref5">                                                                                                                    
+            Takeishi, N., Kawahara, Y., &amp; Yairi, T. (2017). Learning Koopman invariant subspaces for dynamic mode decomposition.                                               
+            <em>Advances in neural information processing systems, 30</em>.                                                                                   
+            <a href="https://doi.org/10.1137/18M1177846" target="_blank">[DOI]</a>                                                     
+        </li> 
+
+        <li id="ref6">                                                                                                                    
+            Yeung, E., Kundu, S., &amp; Hodas, N. (2019, July). Learning deep neural network representations for Koopman operators of nonlinear dynamical systems. In                                              
+            <em>2019 American Control Conference (ACC)</em> (pp. 4832-4839). IEEE.                                                                                   
+            <a href="https://doi.org/10.23919/ACC.2019.8815339" target="_blank">[DOI]</a>                                                     
+        </li> 
+
+        <li id="ref7"> 
+            Chen, R. T., Rubanova, Y., Bettencourt, J., &amp; Duvenaud, D. K. (2018). Neural ordinary differential equations. 
+            <em>Advances in neural information processing systems, 31</em>. 
+            <a href="https://arxiv.org/abs/1806.07366" target="_blank">[arXiv]</a>
+        </li>
+        
+        <li id="ref8">
+            Hesthaven, J. S., &amp; Ubbiali, S. (2018). Non-intrusive reduced order modeling of nonlinear problems using neural networks.
+            <em>Journal of Computational Physics, 363</em>, 55-78.
+            <a href="https://doi.org/10.1016/j.jcp.2018.02.037" target="_blank">[DOI]</a>
+        </li>
+
+        <li id="ref9">
+            Erichson, N. B., Mathelin, L., Yao, Z., Brunton, S. L., Mahoney, M. W., &amp; Kutz, J. N. (2020). Shallow neural networks for fluid flow reconstruction with limited sensors.
+            <em>Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences, 476</em>(2238).
+            <a href="https://doi.org/10.1098/rspa.2020.0097" target="_blank">[DOI]</a>
+        </li>
+
+        <li id="ref10">
+            Schmid, P. J. (2010). Dynamic mode decomposition of numerical and experimental data.
+            <em>Journal of fluid mechanics, 656</em>, 5-28.
+            <a href="https://doi.org/10.1017/S0022112010001217" target="_blank">[DOI]</a>
+        </li>
+
+        <li id="ref11">
+            Brunton, S. L., Proctor, J. L., &amp; Kutz, J. N. (2016). Discovering governing equations from data by sparse identification of nonlinear dynamical systems.
+            <em>Proceedings of the national academy of sciences, 113</em>(15), 3932-3937.
+            <a href="https://doi.org/10.1073/pnas.1517384113" target="_blank">[DOI]</a>
+        </li>
+    </ol>
+</body>
+</html>
