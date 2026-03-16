@@ -7,18 +7,19 @@
     <link rel="icon" href="cl.png" type="image/png">
     <style>
         :root {
-            --bg-color: #ffffff; 
-            --text-color: #333333; 
-            --link-color: #0066cc; 
-            --border-color: #dddddd;
-            --footer-color: #666666;
-        }
-        [data-theme="dark"] {
             --bg-color: #1a1a1a;
             --text-color: #e0e0e0; 
             --link-color: #6db3f2; 
             --border-color: #444444;
             --footer-color: #999999;
+            
+        }
+        [data-theme="light"] {
+            --bg-color: #ffffff; 
+            --text-color: #333333; 
+            --link-color: #0066cc; 
+            --border-color: #dddddd;
+            --footer-color: #666666;
         }
         body {
             font-family: Georgia, serif;
@@ -98,10 +99,10 @@
 </head>
 <body>
     <button id ="theme-toggle" aria-label="Toggle dark mode">
-        <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">                                                                                                                                                                                                         
+        <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">                                                                                                                                                                                                         
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>                                                                                                                                                                                                                                                      
           </svg>                                                                                                                                                                                                                                                                                                                     
-          <svg id="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">                                                                                                                                                                                   
+          <svg id="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">                                                                                                                                                                                   
               <circle cx="12" cy="12" r="5"></circle>                                                                                                                                                                                                                                                                                
               <line x1="12" y1="1" x2="12" y2="3"></line>                                                                                                                                                                                                                                                                            
               <line x1="12" y1="21" x2="12" y2="23"></line>                                                                                                                                                                                                                                                                          
@@ -201,23 +202,23 @@
         const moonIcon = document.getElementById('moon-icon');
         const sunIcon = document.getElementById('sun-icon');
 
-        if (localStorage.getItem('theme') == 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'block';
+        if (localStorage.getItem('theme') == 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            moonIcon.style.display = 'block';
+            sunIcon.style.display = 'none';
         }
-        
+
         toggle.addEventListener('click', function() {
-            if (document.documentElement.getAttribute('data-theme') == 'dark') {
+            if (document.documentElement.getAttribute('data-theme') == 'light') {
                 document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                moonIcon.style.display = 'block';
-                sunIcon.style.display = 'none';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
                 moonIcon.style.display = 'none';
                 sunIcon.style.display = 'block';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
             }
         });
     </script>
