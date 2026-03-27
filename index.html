@@ -7,22 +7,23 @@
     <link rel="icon" href="cl.png" type="image/png">
     <style>
         :root {
-            --bg-color: #ffffff; 
-            --text-color: #333333; 
-            --link-color: #0066cc; 
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --link-color: #0066cc;
             --border-color: #dddddd;
             --footer-color: #666666;
+
         }
         [data-theme="dark"] {
             --bg-color: #1a1a1a;
-            --text-color: #e0e0e0; 
-            --link-color: #6db3f2; 
+            --text-color: #e0e0e0;
+            --link-color: #6db3f2;
             --border-color: #444444;
             --footer-color: #999999;
         }
         body {
             font-family: Georgia, serif;
-            max-width: 700px;
+            max-width: 720px;
             margin: 50px auto;
             padding: 0 20px;
             line-height: 1.6;
@@ -117,7 +118,7 @@
         <div class="header-content">
             <div class="header-text">
                 <h1>Chun Lam (Jason) Li</h1>
-                <p>DPhil student in Mathematics | University of Oxford</p>
+                <p>PhD student in Mathematics | University of Oxford</p>
                 <p> 
                     <a href="mailto:chunlam.li@maths.ox.ac.uk">Email</a> /
                     <a href="https://github.com/chunlamli">GitHub</a> / 
@@ -132,7 +133,7 @@
     <section>
         <h2>About</h2>
         <p>
-            I am a DPhil student at the Mathematical Institute, University of Oxford, 
+            I am a PhD student at the Mathematical Institute, University of Oxford, 
             supervised by <a href="https://www.maths.ox.ac.uk/people/sarah.waters">Prof. Sarah Waters</a> and <a href="https://www.maths.ox.ac.uk/people/justin.sirignano">Prof. Justin Sirigano</a>. 
             My research focuses combining fluid mechanics with machine learning approaches.
         </p>
@@ -203,10 +204,10 @@
 
         if (localStorage.getItem('theme') == 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
-            moonIcon.style.display = 'none';
             sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
         }
-        
+
         toggle.addEventListener('click', function() {
             if (document.documentElement.getAttribute('data-theme') == 'dark') {
                 document.documentElement.removeAttribute('data-theme');
@@ -216,8 +217,8 @@
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                moonIcon.style.display = 'none';
                 sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
             }
         });
     </script>
