@@ -3,41 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chun Lam (Jason) Li</title>
-    <meta name="description" content="Chun Lam (Jason) Li — PhD student in Mathematics at the University of Oxford, researching fluid mechanics and machine learning.">
+    <title>Chun Lam Li</title>
+    <meta name="description" content="Chun Lam Li — PhD student in Mathematics at the University of Oxford, working on machine learning and fluid dynamics.">
     <link rel="canonical" href="https://chunlamli.github.io/">
 
     <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Chun Lam (Jason) Li">
-    <meta property="og:description" content="PhD student in Mathematics at the University of Oxford, researching fluid mechanics and machine learning.">
+    <meta property="og:title" content="Chun Lam Li">
+    <meta property="og:description" content="PhD student in Mathematics at the University of Oxford, working on machine learning and fluid dynamics.">
     <meta property="og:url" content="https://chunlamli.github.io/">
     <meta property="og:image" content="https://chunlamli.github.io/jason.jpg">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Chun Lam (Jason) Li">
-    <meta name="twitter:description" content="PhD student in Mathematics at the University of Oxford, researching fluid mechanics and machine learning.">
+    <meta name="twitter:title" content="Chun Lam Li">
+    <meta name="twitter:description" content="PhD student in Mathematics at the University of Oxford, working on machine learning and fluid dynamics.">
     <meta name="twitter:image" content="https://chunlamli.github.io/jason.jpg">
 
     <link rel="icon" href="cl.png" type="image/png">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --link-color: #0066cc;
-            --border-color: #dddddd;
-            --footer-color: #666666;
-
-        }
-        [data-theme="dark"] {
             --bg-color: #1a1a1a;
             --text-color: #e0e0e0;
             --link-color: #6db3f2;
             --border-color: #444444;
             --footer-color: #999999;
         }
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --link-color: #0066cc;
+            --border-color: #dddddd;
+            --footer-color: #666666;
+        }
         body {
             font-family: Georgia, serif;
-            max-width: 720px;
+            font-size: 17px;
+            max-width: 680px;
             margin: 50px auto;
             padding: 0 20px;
             line-height: 1.6;
@@ -75,11 +75,12 @@
             flex:1;
         }
         .profile-photo {
-            width: 180px;
-            height: 180px;
+            width: 140px;
+            height: 140px;
             object-fit: cover;
             border-radius: 50%;
-            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 12px;
         }
         @media (max-width: 600px) {
             .header-content {
@@ -88,8 +89,8 @@
                 text-align: center;
             }
             .profile-photo {
-                margin-left: 0;
-                margin-top: 20px;
+                margin-right: 0;
+                margin-bottom: 20px;
             }
         }
         #theme-toggle {
@@ -109,14 +110,34 @@
             align-items: center;
             justify-content: center;
         }
+        .name-zh {
+            font-family: "PingFang HK", "PingFang SC", "Hiragino Sans GB", "Microsoft JhengHei", "Heiti TC", sans-serif;
+            font-weight: 400;
+            font-size: 1em;
+            color: var(--footer-color);
+            margin-left: 8px;
+            letter-spacing: 0.05em;
+            vertical-align: -0.10em;
+            white-space: nowrap;
+        }
+        #moon-icon { display: none; }
+        #sun-icon { display: block; }
+        [data-theme="light"] #moon-icon { display: block; }
+        [data-theme="light"] #sun-icon { display: none; }
     </style>
+    <script>
+        // Apply the visitor's saved theme before first paint; default is dark.
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
 </head>
 <body>
     <button id ="theme-toggle" aria-label="Toggle dark mode">
         <svg id="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">                                                                                                                                                                                                         
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>                                                                                                                                                                                                                                                      
           </svg>                                                                                                                                                                                                                                                                                                                     
-          <svg id="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">                                                                                                                                                                                   
+          <svg id="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">                                                                                                                                                                                   
               <circle cx="12" cy="12" r="5"></circle>                                                                                                                                                                                                                                                                                
               <line x1="12" y1="1" x2="12" y2="3"></line>                                                                                                                                                                                                                                                                            
               <line x1="12" y1="21" x2="12" y2="23"></line>                                                                                                                                                                                                                                                                          
@@ -130,16 +151,16 @@
     </button>
     <header>
         <div class="header-content">
-            <div class="header-text">
-                <h1>Chun Lam (Jason) Li</h1>
-                <p>PhD student in Mathematics | University of Oxford</p>
-                <p> 
-                    <a href="mailto:chunlam.li@maths.ox.ac.uk">Email</a> /
-                    <a href="https://github.com/chunlamli">GitHub</a> / 
-                    <a href="https://www.linkedin.com/in/chun-lam-li-9835b4223">LinkedIn</a>
-                </p>    
-            </div>
             <img src="jason.jpg" alt="Chun Lam Li" class="profile-photo">
+            <div class="header-text">
+                <h1>Chun Lam Li (Jason) <span class="name-zh">李俊霖</span></h1>
+                <p>PhD student in Mathematics @ University of Oxford</p>
+                <p>
+                    <a href="mailto:chunlam.li@maths.ox.ac.uk">Email</a> /
+                    <a href="https://github.com/chunlamli">GitHub</a> /
+                    <a href="https://www.linkedin.com/in/chun-lam-li-9835b4223">LinkedIn</a>
+                </p>
+            </div>
         </div>
         
     </header>
@@ -147,9 +168,9 @@
     <section>
         <h2>About</h2>
         <p>
-            I am a PhD student at the Mathematical Institute, University of Oxford, 
+            I am a PhD student at the Mathematical Institute, University of Oxford,
             supervised by <a href="https://www.maths.ox.ac.uk/people/sarah.waters">Prof. Sarah Waters</a> and <a href="https://www.maths.ox.ac.uk/people/justin.sirignano">Prof. Justin Sirignano</a>.
-            My research focuses on combining fluid mechanics with machine learning approaches.
+            I am working on machine learning models in fluid dynamics.
         </p>
 
         <p>                                                                                                                                                                      
@@ -159,10 +180,10 @@
     </section>
 
     <section>
-        <h2>Research Interests</h2>
+        <h2>Research</h2>
         <ul>
             <li>Machine Learning</li>
-            <li>Fluid Mechanics</li>
+            <li>Fluid dynamics</li>
         </ul>
     </section>
 
@@ -183,56 +204,26 @@
         </ul>
     </section>
 
-    <section>                                                                                                                                                                    
-      <h2>Teaching</h2>                                                                                                                                                        
-      <ul>                                                                                                                                                                     
-          <li>                                                                                                                                                                 
-              <strong>Retained Lecturer in Mathematics</strong>, Jesus College, University of Oxford (Feb 2025 - May 2025)                                                                                                 
-              <br>Fluids and Waves                                                                                                                                             
-          </li>                                                                                                                                                                
-          <li>                                                                                                                                                                 
-              <strong>Teaching Assistant</strong>, Mathematical Institute, University of Oxford (Oct 2024 – May 2025)                                                                                
-              <br>Viscous Flow, Further Partial Differential Equations                                                                                                         
-          </li>                                                                                                                                                                
-      </ul>                                                                                                                                                                    
-    </section>      
-
     <section>
         <h2>Skills</h2>
         <p>
             <strong>Programming:</strong> Python (PyTorch, Scikit-learn, Scipy, NumPy, Pandas, Matplotlib), MATLAB
         </p>
-        <p>
-            <strong>Tools:</strong> LaTex, Git
-        </p>
     </section>
 
     <footer>
-        <p>Last updated: 30 May 2026</p>
+        <p>Last updated: June 2026</p>
     </footer>
 
     <script>
         const toggle = document.getElementById('theme-toggle');
-        const moonIcon = document.getElementById('moon-icon');
-        const sunIcon = document.getElementById('sun-icon');
-
-        if (localStorage.getItem('theme') == 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
-
-        toggle.addEventListener('click', function() {
-            if (document.documentElement.getAttribute('data-theme') == 'dark') {
+        toggle.addEventListener('click', function () {
+            if (document.documentElement.getAttribute('data-theme') === 'light') {
                 document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                moonIcon.style.display = 'block';
-                sunIcon.style.display = 'none';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
             }
         });
     </script>
